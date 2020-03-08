@@ -2,7 +2,7 @@ pipeline {
     agent any 	
 	environment {
 		
-		PROJECT_ID = 'devopspipelinejag'
+		PROJECT_ID = 'devopspipelinemmk4mmk'
                 CLUSTER_NAME = 'kubernetes-cluster'
                 LOCATION = 'europe-west1-c'
                 CREDENTIALS_ID = 'kubernetes'		
@@ -31,14 +31,16 @@ pipeline {
 		steps {
                    script {
 	/*myimage = docker.build("jagdevops01/devops:${env.BUILD_ID}")*/
-		     myimage = docker.build("gcr.io/devopspipelinejag/jagdevops01/devops:${env.BUILD_ID}")
+	/*	     myimage = docker.build("gcr.io/devopspipelinejag/jagdevops01/devops:${env.BUILD_ID}") */
+			   myimage = docker.build("mmk4mmk/devops:${env.BUILD_ID}")
                    }
                 }
 	   }
 	   stage("Push Docker Image") {
                 steps {
                    script {
-			   docker.withRegistry('https://gcr.io', 'gcr:gcrcredential') {
+	/*		   docker.withRegistry('https://gcr.io', 'gcr:gcrcredential') { */
+			   docker.withRegistry('https://registry.hub.docker.com', 'Docker_cred')
                             myimage.push("${env.BUILD_ID}")		
                      }
 			   
