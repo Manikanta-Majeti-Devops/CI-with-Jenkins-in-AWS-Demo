@@ -3,8 +3,8 @@ pipeline {
 	environment {
 		
 		PROJECT_ID = 'lithe-booster-262009'
-                CLUSTER_NAME = 'kubernetes-cluster'
-                LOCATION = 'europe-west1-c'
+                CLUSTER_NAME = 'sl-sprint6-kubernetes-cluster'
+                LOCATION = 'us-central1-c'
                 CREDENTIALS_ID = 'k8s-cred'		
 	}
 	
