@@ -2,7 +2,7 @@ pipeline {
     agent any 	
 	environment {
 		
-		PROJECT_ID = 'devopspipelinemmk4mmk'
+		PROJECT_ID = 'devopspipelinemmk'
                 CLUSTER_NAME = 'kubernetes-cluster'
                 LOCATION = 'europe-west1-c'
                 CREDENTIALS_ID = 'k8s-cred'		
