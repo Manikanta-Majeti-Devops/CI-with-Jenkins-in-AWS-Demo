@@ -5,7 +5,7 @@ pipeline {
 		PROJECT_ID = 'devopspipelinemmk4mmk'
                 CLUSTER_NAME = 'kubernetes-cluster'
                 LOCATION = 'europe-west1-c'
-                CREDENTIALS_ID = 'k8s'		
+                CREDENTIALS_ID = 'k8s-cred'		
 	}
 	
     stages {	
