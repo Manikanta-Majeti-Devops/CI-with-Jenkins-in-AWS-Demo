@@ -40,7 +40,7 @@ pipeline {
                 steps {
                    script {
 	/*		   docker.withRegistry('https://gcr.io', 'gcr:gcrcredential') { */
-			   docker.withRegistry('https://registry.hub.docker.com', 'Docker_cred')
+			   docker.withRegistry('https://registry.hub.docker.com', 'docker_cred')
                             myimage.push("${env.BUILD_ID}")		
                      }
 			   
