@@ -31,16 +31,16 @@ pipeline {
 		steps {
                    script {
 	/*myimage = docker.build("jagdevops01/devops:${env.BUILD_ID}")*/
-	/*	     myimage = docker.build("gcr.io/devopspipelinejag/jagdevops01/devops:${env.BUILD_ID}") */
-			   myimage = docker.build("mmk4mmk/devops:${env.BUILD_ID}")
+		     myimage = docker.build("gcr.io/lithe-booster-262009/mmk4mmk/devops:${env.BUILD_ID}") 
+	/*		   myimage = docker.build("mmk4mmk/devops:${env.BUILD_ID}") */
                    }
                 }
 	   }
 	   stage("Push Docker Image") {
                 steps {
                    script {
-	/*		   docker.withRegistry('https://gcr.io', 'gcr:gcrcredential') { */
-			   docker.withRegistry('https://registry.hub.docker.com', 'Docker') {
+			   docker.withRegistry('https://gcr.io', 'gcr:gcr_cred') { 
+	/*		   docker.withRegistry('https://registry.hub.docker.com', 'Docker') {*/
                             myimage.push("${env.BUILD_ID}")		
                      }
 			   
